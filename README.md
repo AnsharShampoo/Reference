@@ -29,3 +29,22 @@ int main(){
 }
 
 ```
+
+## Binary Search
+<a name="BS"></a>
+Esta referencia es básica, recuerda que los parámetros pueden variar y muchas veces tendrás que hacer comparadores para hacer BS the answer.
+```
+int BinarySearch(vector<int> arreglo, int left, int right, int objetivo){
+    while(left<=right){
+        int mid = left+(right-left)/2; //Evitamos overflow al calcular el mid de esta manera.
+        if(arreglo[mid] == objetivo){ //Encontraste lo que buscabas.
+            return mid;
+        }else if(arreglo[mid]>objetivo){ //El objetivo está a la derecha (es menor)
+            right = mid-1;
+        }else{ //El objetivo está a la izquierda (es mayor)
+            left = mid+1;
+        }
+    }
+    return -1; //Si llegamos aquí el elemento no existe en el arreglo
+}
+```
