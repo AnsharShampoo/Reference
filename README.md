@@ -7,6 +7,7 @@ Si algo te sirve o te encuentras en un apuro, siéntete libre de forkearlo o imp
 # Índice
 * [Layout básico](#Plantilla)
 * [Binary Search](#BS)
+* [Precisión de puntos decimales](#decimales)
 
 
 ## Layout Básico 
@@ -28,9 +29,12 @@ int main(){
     //freopen(".out", "w", stdout);
     
 }
-
 ```
-
+## Precisión de puntos decimales
+<a name="decimales"></a>
+```
+cout<<fixed<<setprecision(decimales)<<n;
+```
 ## Binary Search
 <a name="BS"></a>
 Esta referencia es básica, recuerda que los parámetros pueden variar y muchas veces tendrás que hacer comparadores para hacer BS the answer.
