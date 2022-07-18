@@ -6,8 +6,9 @@ Si algo te sirve o te encuentras en un apuro, siéntete libre de forkearlo o imp
   
 # Índice
 * [Layout básico](#Plantilla)
-* [Binary Search](#BS)
 * [Precisión de puntos decimales](#decimales)
+* [Binary Search](#BS)
+
 
 
 ## Layout Básico 
