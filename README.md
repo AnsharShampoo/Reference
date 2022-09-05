@@ -8,8 +8,7 @@ Si algo te sirve o te encuentras en un apuro, siéntete libre de forkearlo o imp
 * [Layout básico](#Plantilla)
 * [Precisión de puntos decimales](#decimales)
 * [Binary Search](#BS)
-
-
+* [DFS](#dfs)
 
 ## Layout Básico 
 <a name="Plantilla"></a>
@@ -52,5 +51,22 @@ int BinarySearch(vector<int> arreglo, int left, int right, int objetivo){
         }
     }
     return -1; //Si llegamos aquí el elemento no existe en el arreglo
+}
+```
+
+## DFS (Depth-First Search) 
+<a name="dfs"></a>
+Referencia básica para recorrer un grafo conexo y devolver la cantidad de nodos en este *(nota: recuerda inicializar el vector de visitados así como el vector de adyacencia grafo)*:
+
+```
+int dfs(int nodo){
+    int numero_de_nodos =1;
+    visitado[nodo] = true;
+    for(auto vecino : grafo[nodo]){
+        if(!visitado[vecino]){
+            numero_de_nodos+=dfs(vecino);
+        }
+    }
+    return numero_de_nodos;
 }
 ```
