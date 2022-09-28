@@ -6,8 +6,12 @@ Si algo te sirve o te encuentras en un apuro, siéntete libre de forkearlo o imp
   
 # Índice
 * [Layout básico](#Plantilla)
-* [Precisión de puntos decimales](#decimales)
+## Algoritmos Comunes
 * [Binary Search](#BS)
+## Matemáticas
+* [Precisión de puntos decimales](#decimales)
+* [Exponenciación Modular](#exponenciacion_modular)
+## Grafos
 * [DFS](#dfs)
 
 ## Layout Básico 
@@ -34,6 +38,32 @@ int main(){
 <a name="decimales"></a>
 ```
 cout<<fixed<<setprecision(decimales)<<n;
+```
+## Exponenciacón Modular
+<a name ="exponenciacion_modular"></a>
+Forma de calcular de manera eficiente *x^n mod m* en O(logn)
+### Iterativo:
+```
+ll mod_pow(ll x, ll n, ll m){
+    if (n == 0) return 1%m;
+    ll u = mod_pow(x,n/2,m);
+    u = (u*u)%m;
+    if (n%2 == 1) u = (u*x)%m;
+    return u;
+}
+```
+### Recursivo:
+```
+ll mod_powi(ll a, ll b, ll m){
+    ll result = 1;
+    while(b>0){
+        if(b%2 == 1) result = (result*a)%m;
+        a = (a*a)%m;
+        b /= 2;
+    }
+    return result;
+}
+}
 ```
 ## Binary Search
 <a name="BS"></a>
