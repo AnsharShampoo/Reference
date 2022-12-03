@@ -179,6 +179,24 @@ vector<ll> criba_lineal(ll n){
     return primos;
 }
 ```
+
+## GCD
+```
+int gcd(int a, int b){
+    if(b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+```
+
+## LCM
+```
+int lcm (int a, int b) {
+    return a / gcd(a, b) * b;
+}
+```
+
+
 ## Algoritmo Extendido de Euclides
 <a name = "euclides_extendido"></a>
 Algoritmo de euclides para encontrar el gcd de dos números (a,b) y el par(x,y) tal que ax+by=gcd(a,b)
@@ -212,6 +230,33 @@ bool solucion_diofantica(ll a, ll b, ll c, ll &x0, ll &y0, ll &g){
     return true;
 }
 ```
+
+## Elevados en fa
+```
+long long quick_power(long long a, long long b){
+    if(b == 0)
+        return 1;
+    if(b % 2 == 1)
+        return quick_power(a, b - 1) * a % mod;
+    return quick_power( a * a % mod, b / 2);
+}
+
+```
+
+## Inverso multiplicativo
+```
+long long inverse(long long x){
+    return quick_power(x, mod - 2);
+}
+```
+
+## Coeficiente Binomial
+```
+long long binomial_coefficient(int a, int b){
+    return fact[a] * inverse(fact[b] * fact[a - b] % mod) % mod;
+}
+```
+
 # Algoritmos Comunes
 ## Binary Search
 <a name="BS"></a>
@@ -229,6 +274,24 @@ int BinarySearch(vector<int> arreglo, int left, int right, int objetivo){
         }
     }
     return -1; //Si llegamos aquí el elemento no existe en el arreglo
+}
+```
+
+## Ternary Search
+```
+double ternary_search(double l, double r) {
+    double eps = 1e-9;              //set the error limit here
+    while (r - l > eps) {
+        double m1 = l + (r - l) / 3;
+        double m2 = r - (r - l) / 3;
+        double f1 = f(m1);      //evaluates the function at m1
+        double f2 = f(m2);      //evaluates the function at m2
+        if (f1 < f2)
+            l = m1;
+        else
+            r = m2;
+    }
+    return f(l);                    //return the maximum of f(x) in [l, r]
 }
 ```
 
